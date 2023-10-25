@@ -14,14 +14,17 @@ class HomeScreen extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
-            title: Text(StringNames().textOne()),
+            title: const Text(StringNames.textOne),
             titleTextStyle: const TextStyle(
                 fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black),
-            bottom: const TabBar(labelColor: Colors.black, tabs: [
-              Tab(text: 'Contact1'),
-              Tab(text: 'Contact2'),
-              Tab(text: 'Contact3'),
-            ]),
+            bottom: const TabBar(
+              labelColor: Colors.black,
+              tabs: [
+                Tab(child: Text(StringNames.textTwo)),
+                Tab(child: Text(StringNames.textThree)),
+                Tab(child: Text(StringNames.textFour)),
+              ],
+            ),
           ),
           body: const TabBarView(children: [
             ContactListPage(startId: 1, endId: 33),
